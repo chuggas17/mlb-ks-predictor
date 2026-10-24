@@ -20,7 +20,7 @@ def analyze_odds(probability: float, odds: int, stake: float) -> dict:
             'quarter_kelly': full_kelly / 4}
 
 
-def predict(games: list[dict], line: float, simulations: int = 30000, seed: int = 42) -> dict:
+ def predict(games: list[dict], line: float, simulations: int = 30000, seed: int = 42, opponent_k_rate: float | None = None) -> dict:
     """Simulate BF and K using empirical workload + beta-binomial rate.
 
     Historical game logs must precede the target game. Workload is sampled from
